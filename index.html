@@ -15,8 +15,24 @@
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script>
   $(function(){
-    console.log('ready')
+    console.log('ready');
     var $profile = $('#profile');
+    $profile.append('<p>My Paragraph</p>');
+    var background = $profile.css('background-color', 'red');
+
+    $profile.fadeOut(5000,function(){
+      $(this).fadeIn();
+    });
+
+    var paragraph = $('#profile > p');
+
+    var hobbies = ['clarinet', 'jiujitsu', 'crossfit'];
+    $profile.append('<ul></ul>');
+    var $list = $profile.find('ul');
+    for (var i = 0;i < hobbies.length; i++){
+      $list.append('<li>Test</li>');
+    }
+
   })
 
 
